@@ -6,6 +6,9 @@ export default antfu(
     formatters: true,
   },
   {
-    'unicorn/prefer-regex-literals': 'off',
+    files: ['**/*.ts'],
+    rules: {
+      'prefer-regex-literals': 'off',
+    },
   },
 )
