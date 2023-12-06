@@ -1,0 +1,15 @@
+@use "./vars.module.scss" as vars;
+@use "./lib.scss" as *;
+@use "./mixins.scss" as *;
+
+body,
+html{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Tahoma,PingFang SC,Microsoft Yahei,Arial,Hiragino Sans GB,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+#app {
+  height: 100%;
+}

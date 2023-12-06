@@ -1,0 +1,12 @@
+$dark: #121212;
+$theme: #0052D9;
+$theme-fade: #f2f3ff;
+
+:root {
+  --theme: #0052D9;
+  --theme-fade: #f2f3ff;
+}
+
+:export {
+  theme: $theme,
+}
