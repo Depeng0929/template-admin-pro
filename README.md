@@ -1,0 +1,2 @@
+- file base -> router.js
+- layout换成后台字段生成

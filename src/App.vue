@@ -1,6 +1,13 @@
+<script lang="ts" setup>
+import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
+
+const locale = computed(() => {
+  return zhCN
+})
+</script>
+
 <template>
-  <main font-sans p="x-4 y-10" text="center gray-700 dark:gray-200">
+  <a-config-provider :locale="locale">
     <RouterView />
-    <TheFooter />
-  </main>
+  </a-config-provider>
 </template>
