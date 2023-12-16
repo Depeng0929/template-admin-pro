@@ -1,2 +1,9 @@
-- file base -> router.js
-- layout换成后台字段生成
+- file base and layout -> 后台接口自动解析生成
+- 登录（验证码，扫描动画）
+- 3级菜单（icon，高级搜索中展示）
+- 权限管理
+- mock若依
+-
+-
+-
+-
