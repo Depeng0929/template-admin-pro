@@ -32,6 +32,7 @@ export default defineConfig({
   ],
   theme: {
     colors: {
+      theme: 'var(--theme)',
       gray: '#646a73',
       black: '#1f2329',
     },

@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@vue/compiler-core': ^3.3
+
 dependencies:
   '@arco-design/web-vue':
     specifier: ^2.53.3
@@ -72,7 +75,7 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config':
     specifier: ^2.4.6
-    version: 2.4.6(@unocss/eslint-plugin@0.58.0)(@vue/compiler-sfc@3.3.10)(eslint-plugin-format@0.1.0)(eslint@8.56.0)(typescript@5.3.3)(vitest@1.0.4)
+    version: 2.4.6(@unocss/eslint-plugin@0.58.0)(@vue/compiler-sfc@3.3.12)(eslint-plugin-format@0.1.0)(eslint@8.56.0)(typescript@5.3.3)(vitest@1.0.4)
   '@arco-plugins/vite-vue':
     specifier: ^1.4.5
     version: 1.4.5
@@ -171,7 +174,7 @@ devDependencies:
     version: 0.7.0(vue-router@4.2.5)(vue@3.3.12)
   v-lazy-show:
     specifier: ^0.2.4
-    version: 0.2.4(@vue/compiler-core@3.3.10)
+    version: 0.2.4(@vue/compiler-core@3.3.12)
   vite:
     specifier: ^5.0.10
     version: 5.0.10(@types/node@20.10.4)(sass@1.69.5)
@@ -212,7 +215,7 @@ packages:
       '@jridgewell/trace-mapping': 0.3.20
     dev: true
 
-  /@antfu/eslint-config@2.4.6(@unocss/eslint-plugin@0.58.0)(@vue/compiler-sfc@3.3.10)(eslint-plugin-format@0.1.0)(eslint@8.56.0)(typescript@5.3.3)(vitest@1.0.4):
+  /@antfu/eslint-config@2.4.6(@unocss/eslint-plugin@0.58.0)(@vue/compiler-sfc@3.3.12)(eslint-plugin-format@0.1.0)(eslint@8.56.0)(typescript@5.3.3)(vitest@1.0.4):
     resolution: {integrity: sha512-dwRlY//llv3xnzLdSJzjEQQ/uS9p5rdNh7m4k2sqUlo4PsJ9EXBTWnZl6BPJZIGoVZGpDiGBpyO8hG/5I7yLrQ==}
     hasBin: true
     peerDependencies:
@@ -262,7 +265,7 @@ packages:
       eslint-plugin-vitest: 0.3.17(@typescript-eslint/eslint-plugin@6.14.0)(eslint@8.56.0)(typescript@5.3.3)(vitest@1.0.4)
       eslint-plugin-vue: 9.19.2(eslint@8.56.0)
       eslint-plugin-yml: 1.11.0(eslint@8.56.0)
-      eslint-processor-vue-blocks: 0.1.1(@vue/compiler-sfc@3.3.10)(eslint@8.56.0)
+      eslint-processor-vue-blocks: 0.1.1(@vue/compiler-sfc@3.3.12)(eslint@8.56.0)
       globals: 13.24.0
       jsonc-eslint-parser: 2.4.0
       local-pkg: 0.5.0
@@ -2987,7 +2990,7 @@ packages:
     resolution: {integrity: sha512-GAwkz0AihzY5bkwIY5QDR+LvsRQgB/B+1foMPvi0FZPMl5fjD7ICiznUiBdLYMH1QYe6vqu4gWYytZOccLouFw==}
     engines: {node: '>= 10.0.0'}
     dependencies:
-      '@babel/types': 7.23.5
+      '@babel/types': 7.23.6
     dev: true
 
   /balanced-match@1.0.2:
@@ -3475,7 +3478,7 @@ packages:
     resolution: {integrity: sha512-vCrqcSIq4//Gx74TXXCGnHpulY1dskqLTFGDmhrGxzeXL8lF8kvXv6mpNWlJj1uD4DW23D4ljAqbY4RRaaUZIw==}
     dependencies:
       '@babel/parser': 7.23.5
-      '@babel/types': 7.23.5
+      '@babel/types': 7.23.6
     dev: true
 
   /convert-source-map@2.0.0:
@@ -4199,13 +4202,13 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-processor-vue-blocks@0.1.1(@vue/compiler-sfc@3.3.10)(eslint@8.56.0):
+  /eslint-processor-vue-blocks@0.1.1(@vue/compiler-sfc@3.3.12)(eslint@8.56.0):
     resolution: {integrity: sha512-9+dU5lU881log570oBwpelaJmOfOzSniben7IWEDRYQPPWwlvaV7NhOtsTuUWDqpYT+dtKKWPsgz4OkOi+aZnA==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.3.0
       eslint: ^8.50.0
     dependencies:
-      '@vue/compiler-sfc': 3.3.10
+      '@vue/compiler-sfc': 3.3.12
       eslint: 8.56.0
     dev: true
 
@@ -7856,12 +7859,12 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: true
 
-  /v-lazy-show@0.2.4(@vue/compiler-core@3.3.10):
+  /v-lazy-show@0.2.4(@vue/compiler-core@3.3.12):
     resolution: {integrity: sha512-Lx9Str2i+HTh+zGzs9O3YyhGAZOAAfU+6MUUPcQPPiPxQO1sHBEv9sH3MO9bPc4T09gsjsS2+sbaCWQ1MdhpJQ==}
     peerDependencies:
       '@vue/compiler-core': ^3.3
     dependencies:
-      '@vue/compiler-core': 3.3.10
+      '@vue/compiler-core': 3.3.12
     dev: true
 
   /v8flags@4.0.1:
@@ -8337,7 +8340,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dependencies:
       '@babel/parser': 7.23.5
-      '@babel/types': 7.23.5
+      '@babel/types': 7.23.6
       assert-never: 1.2.1
       babel-walk: 3.0.0-canary-5
     dev: true

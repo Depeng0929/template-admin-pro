@@ -3,6 +3,7 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import UnoCSS from 'unocss/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { transformLazyShow } from 'v-lazy-show'
 
 export default [
   VueDevTools(),
@@ -15,10 +16,16 @@ export default [
           propsDestructure: true,
           defineModel: true,
         },
+        template: {
+          compilerOptions: {
+            nodeTransforms: [
+              transformLazyShow as any, // <--- add this
+            ],
+          },
+        },
       }),
     },
   }),
   vueJsx(),
   UnoCSS(),
-
 ]

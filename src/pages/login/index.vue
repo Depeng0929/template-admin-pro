@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import { useMediaQuery } from '@vueuse/core'
+
 import config from '../../../config'
+import { PageNames, steperManager } from './steps'
+
 import LoginLottie from './components/LoginLottie.vue'
 import LoginForm from './components/LoginForm.vue'
+import VerificationForm from './components/VerificationForm.vue'
+
 import BannerImage from '~/assets/img/banner.png'
 
 const isLargeScreen = useMediaQuery('(min-width:569px)')
+const { current } = steperManager
 </script>
 
 <template>
@@ -28,7 +34,8 @@ const isLargeScreen = useMediaQuery('(min-width:569px)')
         sm="fixed-c w-111"
       >
         <div sm="border-1 border-[#dee0e3] rounded-[12px] border-solid h-[550px]" :class="[isLargeScreen ? 'login-body' : '']">
-          <LoginForm />
+          <LoginForm v-show="current === PageNames.LOGIN" />
+          <VerificationForm v-show="current === PageNames.VERIFICATION" />
         </div>
         <div class="mt-6 text-center text-sm text-gray">
           还没有企业
@@ -61,7 +68,10 @@ const isLargeScreen = useMediaQuery('(min-width:569px)')
   }
 
   .login-body {
-    box-shadow: 0 4px 8px rgba(31,35,41,.03), 0 3px 6px -6px rgba(31,35,41,.05), 0 6px 18px 6px rgba(31,35,41,.03);
+    box-shadow:
+      0 4px 8px rgba(31, 35, 41, 0.03),
+      0 3px 6px -6px rgba(31, 35, 41, 0.05),
+      0 6px 18px 6px rgba(31, 35, 41, 0.03);
   }
 }
 </style>
