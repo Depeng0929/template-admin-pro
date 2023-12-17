@@ -45,7 +45,10 @@ declare module 'vue-router/auto/routes' {
     '/login/components/AuthTips': RouteRecordInfo<'/login/components/AuthTips', '/login/components/AuthTips', Record<never, never>, Record<never, never>>,
     '/login/components/LoginForm': RouteRecordInfo<'/login/components/LoginForm', '/login/components/LoginForm', Record<never, never>, Record<never, never>>,
     '/login/components/LoginLottie': RouteRecordInfo<'/login/components/LoginLottie', '/login/components/LoginLottie', Record<never, never>, Record<never, never>>,
-    '/login/components/VerificationForm': RouteRecordInfo<'/login/components/VerificationForm', '/login/components/VerificationForm', Record<never, never>, Record<never, never>>,
+    '/login/components/PasswordForm': RouteRecordInfo<'/login/components/PasswordForm', '/login/components/PasswordForm', Record<never, never>, Record<never, never>>,
+    '/login/components/Verification/components/Timer': RouteRecordInfo<'/login/components/Verification/components/Timer', '/login/components/Verification/components/Timer', Record<never, never>, Record<never, never>>,
+    '/login/components/Verification/Form': RouteRecordInfo<'/login/components/Verification/Form', '/login/components/Verification/Form', Record<never, never>, Record<never, never>>,
+    '/register/': RouteRecordInfo<'/register/', '/register', Record<never, never>, Record<never, never>>,
   }
 }
 

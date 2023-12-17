@@ -1,8 +1,8 @@
-import Mock from 'mockjs';
-import setupMock, { successResponseWrap } from '~/utils/setup-mock';
+import Mock from 'mockjs'
+import setupMock, { successResponseWrap } from '~/utils/setup-mock'
 
-const haveReadIds: number[] = [];
-const getMessageList = () => {
+const haveReadIds: number[] = []
+function getMessageList() {
   return [
     {
       id: 1,
@@ -64,22 +64,22 @@ const getMessageList = () => {
       time: '今天 12:20:01',
       messageType: 0,
     },
-  ].map((item) => ({
+  ].map(item => ({
     ...item,
-    status: haveReadIds.indexOf(item.id) === -1 ? 0 : 1,
-  }));
-};
+    status: !haveReadIds.includes(item.id) ? 0 : 1,
+  }))
+}
 
 setupMock({
   setup: () => {
     Mock.mock(new RegExp('/api/message/list'), () => {
-      return successResponseWrap(getMessageList());
-    });
+      return successResponseWrap(getMessageList())
+    })
 
     Mock.mock(new RegExp('/api/message/read'), (params: { body: string }) => {
-      const { ids } = JSON.parse(params.body);
-      haveReadIds.push(...(ids || []));
-      return successResponseWrap(true);
-    });
+      const { ids } = JSON.parse(params.body)
+      haveReadIds.push(...(ids || []))
+      return successResponseWrap(true)
+    })
   },
-});
+})

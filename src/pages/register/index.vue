@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    验证码
+    register
   </div>
 </template>

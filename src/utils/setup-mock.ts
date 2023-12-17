@@ -3,19 +3,17 @@ export default ({ mock, setup }: { mock?: boolean, setup: () => void }) => {
     setup()
 }
 
-export function successResponseWrap(data: unknown) {
+export function successResponseWrap<T extends Record<string, any>>(data: T): API.AppHttpResponse<T> {
   return {
     data,
-    status: 'ok',
     msg: '请求成功',
-    code: 20000,
+    code: 200,
   }
 }
 
-export function failResponseWrap(data: unknown, msg: string, code = 50000) {
+export function failResponseWrap<T extends Record<string, any>>(data: T, msg: string, code = 500): API.AppHttpResponse<T> {
   return {
     data,
-    status: 'fail',
     msg,
     code,
   }

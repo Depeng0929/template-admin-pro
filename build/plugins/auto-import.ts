@@ -2,6 +2,7 @@ import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+
 import { vitePluginForArco } from '@arco-plugins/vite-vue'
 
 export default [

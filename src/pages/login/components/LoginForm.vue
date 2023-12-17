@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import type { FieldRule } from '@arco-design/web-vue'
-import { steperManager } from '../steps'
+import { sleep } from '@depeng9527/tools'
+import { loginFormModel, steperManager } from '../state'
 import config from '../../../../config'
-import { initialForm } from '../constants'
 import AuthTips from './AuthTips.vue'
 import { isEmail, isMobile } from '~/utils/validate'
 
 const read = ref(false)
 const [modal, setModal] = useModalState()
+const [loading, setLoading] = useLoading()
 
 const currentTabKey = ref('phone')
-const rules = computed<Partial<Record<keyof ReturnType<typeof initialForm>, FieldRule | FieldRule[]>>>(() => {
+const rules = computed<Partial<Record<keyof typeof loginFormModel.value, FieldRule | FieldRule[]>>>(() => {
   return currentTabKey.value === 'phone'
     ? {
         phone: [
@@ -37,7 +38,7 @@ const rules = computed<Partial<Record<keyof ReturnType<typeof initialForm>, Fiel
 })
 
 const { formData, getFormProps, getSubmitButtonProps } = useForm(
-  initialForm(),
+  loginFormModel,
   {
     rules,
     isToast: false,
@@ -53,12 +54,17 @@ const { formData, getFormProps, getSubmitButtonProps } = useForm(
 
 const btnPass = computed(() => {
   return currentTabKey.value === 'phone'
-    ? isMobile(formData.value.phone)
-    : isEmail(formData.value.email)
+    ? isMobile(formData.value.phone || '')
+    : isEmail(formData.value.email || '')
 })
 
-function onReadAgree() {
+async function onReadAgree() {
   read.value = true
+
+  setLoading(true)
+  await sleep(500)
+  setLoading(false)
+
   steperManager.goToNext()
 }
 </script>
@@ -88,7 +94,7 @@ function onReadAgree() {
           </a-tab-pane>
         </a-tabs>
         <div class="mt-4">
-          <a-button v-bind="getSubmitButtonProps()" type="primary" long size="large" :disabled="!btnPass">
+          <a-button v-bind="getSubmitButtonProps()" type="primary" long size="large" :disabled="!btnPass" :loading="loading">
             下一步
           </a-button>
         </div>
