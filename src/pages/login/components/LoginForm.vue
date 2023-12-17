@@ -46,7 +46,7 @@ const { formData, getFormProps, getSubmitButtonProps } = useForm(
         setModal()
         return
       }
-      return ''
+      return steperManager.goToNext()
     },
   },
 )
