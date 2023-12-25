@@ -56,8 +56,8 @@ declare global {
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
-  const onBeforeRouteLeave: typeof import('vue-router/auto')['onBeforeRouteLeave']
-  const onBeforeRouteUpdate: typeof import('vue-router/auto')['onBeforeRouteUpdate']
+  const onBeforeRouteLeave: typeof import('vue-router')['onBeforeRouteLeave']
+  const onBeforeRouteUpdate: typeof import('vue-router')['onBeforeRouteUpdate']
   const onBeforeUnmount: typeof import('vue')['onBeforeUnmount']
   const onBeforeUpdate: typeof import('vue')['onBeforeUpdate']
   const onClickOutside: typeof import('@vueuse/core')['onClickOutside']
@@ -74,6 +74,7 @@ declare global {
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
   const pausableWatch: typeof import('@vueuse/core')['pausableWatch']
+  const permission: typeof import('./src/composables/permission')['default']
   const provide: typeof import('vue')['provide']
   const provideLocal: typeof import('@vueuse/core')['provideLocal']
   const reactify: typeof import('@vueuse/core')['reactify']
@@ -193,7 +194,7 @@ declare global {
   const useIntervalFn: typeof import('@vueuse/core')['useIntervalFn']
   const useKeyModifier: typeof import('@vueuse/core')['useKeyModifier']
   const useLastChanged: typeof import('@vueuse/core')['useLastChanged']
-  const useLink: typeof import('vue-router/auto')['useLink']
+  const useLink: typeof import('vue-router')['useLink']
   const useLoading: typeof import('./src/composables/loading')['useLoading']
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
@@ -220,7 +221,7 @@ declare global {
   const useParallax: typeof import('@vueuse/core')['useParallax']
   const useParentElement: typeof import('@vueuse/core')['useParentElement']
   const usePerformanceObserver: typeof import('@vueuse/core')['usePerformanceObserver']
-  const usePermission: typeof import('@vueuse/core')['usePermission']
+  const usePermission: typeof import('./src/composables/permission')['usePermission']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerLock: typeof import('@vueuse/core')['usePointerLock']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
@@ -233,8 +234,10 @@ declare global {
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
-  const useRoute: typeof import('vue-router/auto')['useRoute']
-  const useRouter: typeof import('vue-router/auto')['useRouter']
+  const useRoute: typeof import('vue-router')['useRoute']
+  const useRouteParams: typeof import('@vueuse/router')['useRouteParams']
+  const useRouteQuery: typeof import('@vueuse/router')['useRouteQuery']
+  const useRouter: typeof import('vue-router')['useRouter']
   const useScreenOrientation: typeof import('@vueuse/core')['useScreenOrientation']
   const useScreenSafeArea: typeof import('@vueuse/core')['useScreenSafeArea']
   const useScriptTag: typeof import('@vueuse/core')['useScriptTag']
@@ -319,8 +322,6 @@ declare module 'vue' {
     readonly debug: UnwrapRef<typeof import('@depeng9527/tools')['debug']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
-    readonly defineLoader: UnwrapRef<typeof import('vue-router/auto')['defineLoader']>
-    readonly definePage: UnwrapRef<typeof import('unplugin-vue-router/runtime')['_definePage']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly equal: UnwrapRef<typeof import('@depeng9527/tools')['equal']>
     readonly fail: UnwrapRef<typeof import('./src/composables/toast')['fail']>
@@ -336,8 +337,8 @@ declare module 'vue' {
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
-    readonly onBeforeRouteLeave: UnwrapRef<typeof import('vue-router/auto')['onBeforeRouteLeave']>
-    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('vue-router/auto')['onBeforeRouteUpdate']>
+    readonly onBeforeRouteLeave: UnwrapRef<typeof import('vue-router')['onBeforeRouteLeave']>
+    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('vue-router')['onBeforeRouteUpdate']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
     readonly onBeforeUpdate: UnwrapRef<typeof import('vue')['onBeforeUpdate']>
     readonly onDeactivated: UnwrapRef<typeof import('vue')['onDeactivated']>
@@ -369,13 +370,16 @@ declare module 'vue' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useForm: UnwrapRef<typeof import('./src/composables/form')['useForm']>
-    readonly useLink: UnwrapRef<typeof import('vue-router/auto')['useLink']>
+    readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useLoading: UnwrapRef<typeof import('./src/composables/loading')['useLoading']>
     readonly useModalAction: UnwrapRef<typeof import('./src/composables/modal')['useModalAction']>
     readonly useModalInject: UnwrapRef<typeof import('./src/composables/modal')['useModalInject']>
     readonly useModalState: UnwrapRef<typeof import('./src/composables/modal')['useModalState']>
-    readonly useRoute: UnwrapRef<typeof import('vue-router/auto')['useRoute']>
-    readonly useRouter: UnwrapRef<typeof import('vue-router/auto')['useRouter']>
+    readonly usePermission: UnwrapRef<typeof import('./src/composables/permission')['usePermission']>
+    readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
+    readonly useRouteParams: UnwrapRef<typeof import('@vueuse/router')['useRouteParams']>
+    readonly useRouteQuery: UnwrapRef<typeof import('@vueuse/router')['useRouteQuery']>
+    readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly warning: UnwrapRef<typeof import('./src/composables/toast')['warning']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
@@ -394,8 +398,6 @@ declare module '@vue/runtime-core' {
     readonly debug: UnwrapRef<typeof import('@depeng9527/tools')['debug']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
-    readonly defineLoader: UnwrapRef<typeof import('vue-router/auto')['defineLoader']>
-    readonly definePage: UnwrapRef<typeof import('unplugin-vue-router/runtime')['_definePage']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly equal: UnwrapRef<typeof import('@depeng9527/tools')['equal']>
     readonly fail: UnwrapRef<typeof import('./src/composables/toast')['fail']>
@@ -411,8 +413,8 @@ declare module '@vue/runtime-core' {
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
-    readonly onBeforeRouteLeave: UnwrapRef<typeof import('vue-router/auto')['onBeforeRouteLeave']>
-    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('vue-router/auto')['onBeforeRouteUpdate']>
+    readonly onBeforeRouteLeave: UnwrapRef<typeof import('vue-router')['onBeforeRouteLeave']>
+    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('vue-router')['onBeforeRouteUpdate']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
     readonly onBeforeUpdate: UnwrapRef<typeof import('vue')['onBeforeUpdate']>
     readonly onDeactivated: UnwrapRef<typeof import('vue')['onDeactivated']>
@@ -444,13 +446,16 @@ declare module '@vue/runtime-core' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useForm: UnwrapRef<typeof import('./src/composables/form')['useForm']>
-    readonly useLink: UnwrapRef<typeof import('vue-router/auto')['useLink']>
+    readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useLoading: UnwrapRef<typeof import('./src/composables/loading')['useLoading']>
     readonly useModalAction: UnwrapRef<typeof import('./src/composables/modal')['useModalAction']>
     readonly useModalInject: UnwrapRef<typeof import('./src/composables/modal')['useModalInject']>
     readonly useModalState: UnwrapRef<typeof import('./src/composables/modal')['useModalState']>
-    readonly useRoute: UnwrapRef<typeof import('vue-router/auto')['useRoute']>
-    readonly useRouter: UnwrapRef<typeof import('vue-router/auto')['useRouter']>
+    readonly usePermission: UnwrapRef<typeof import('./src/composables/permission')['usePermission']>
+    readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
+    readonly useRouteParams: UnwrapRef<typeof import('@vueuse/router')['useRouteParams']>
+    readonly useRouteQuery: UnwrapRef<typeof import('@vueuse/router')['useRouteQuery']>
+    readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly warning: UnwrapRef<typeof import('./src/composables/toast')['warning']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>

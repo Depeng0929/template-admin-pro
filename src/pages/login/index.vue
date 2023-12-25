@@ -2,11 +2,11 @@
 import { useMediaQuery } from '@vueuse/core'
 
 import config from '../../../config'
-import { PageNames, steperManager } from './state'
+import { PageNames, steperManager } from './share'
 
 import LoginLottie from './components/LoginLottie.vue'
-import LoginForm from './components/LoginForm.vue'
-import VerificationForm from './components/Verification/Form.vue'
+import PhoneForm from './components/PhoneForm.vue'
+import VerificationForm from './components/VerificationForm/index.vue'
 import PasswordForm from './components/PasswordForm.vue'
 
 import BannerImage from '~/assets/img/banner.png'
@@ -35,7 +35,7 @@ const { current } = steperManager
         sm="fixed-c w-111"
       >
         <div sm="border-1 border-[#dee0e3] rounded-[12px] border-solid h-[550px]" :class="[isLargeScreen ? 'login-body' : '']">
-          <LoginForm v-show="current === PageNames.LOGIN" />
+          <PhoneForm v-show="current === PageNames.LOGIN" />
           <VerificationForm v-show="current === PageNames.VERIFICATION" />
           <PasswordForm v-show="current === PageNames.PASSWORD" />
         </div>

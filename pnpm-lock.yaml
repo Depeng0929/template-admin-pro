@@ -23,6 +23,9 @@ dependencies:
   '@vueuse/integrations':
     specifier: ^10.7.0
     version: 10.7.0(axios@1.6.2)(nprogress@0.2.0)(universal-cookie@6.1.1)(vue@3.3.12)
+  '@vueuse/router':
+    specifier: ^10.7.0
+    version: 10.7.0(vue-router@4.2.5)(vue@3.3.12)
   await-to-js:
     specifier: ^3.0.0
     version: 3.0.0
@@ -191,8 +194,8 @@ devDependencies:
     specifier: 1.0.0-rc.8
     version: 1.0.0-rc.8(pug@3.0.2)(vite@5.0.10)
   vite-plugin-vue-layouts:
-    specifier: ^0.9.1
-    version: 0.9.1(vite@5.0.10)(vue-router@4.2.5)(vue@3.3.12)
+    specifier: ^0.10.0
+    version: 0.10.0(vite@5.0.10)(vue-router@4.2.5)(vue@3.3.12)
   vitest:
     specifier: ^1.0.4
     version: 1.0.4(@types/node@20.10.4)(jsdom@23.0.1)(sass@1.69.5)
@@ -2732,6 +2735,19 @@ packages:
 
   /@vueuse/metadata@10.7.0:
     resolution: {integrity: sha512-GlaH7tKP2iBCZ3bHNZ6b0cl9g0CJK8lttkBNUX156gWvNYhTKEtbweWLm9rxCPIiwzYcr/5xML6T8ZUEt+DkvA==}
+
+  /@vueuse/router@10.7.0(vue-router@4.2.5)(vue@3.3.12):
+    resolution: {integrity: sha512-8NQ12V3dtiIEKyd32RzzXLOqU+NC5/9cf7kv5cGOQzJB+Ne8j+1VmRz4ciOhOyHuiBJSfjwSqKDTzvsczZUBlQ==}
+    peerDependencies:
+      vue-router: '>=4.0.0-rc.1'
+    dependencies:
+      '@vueuse/shared': 10.7.0(vue@3.3.12)
+      vue-demi: 0.14.6(vue@3.3.12)
+      vue-router: 4.2.5(vue@3.3.12)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
 
   /@vueuse/shared@10.7.0(vue@3.3.12):
     resolution: {integrity: sha512-kc00uV6CiaTdc3i1CDC4a3lBxzaBE9AgYNtFN87B5OOscqeWElj/uza8qVDmk7/U8JbqoONLbtqiLJ5LGRuqlw==}
@@ -8026,8 +8042,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vue-layouts@0.9.1(vite@5.0.10)(vue-router@4.2.5)(vue@3.3.12):
-    resolution: {integrity: sha512-63ekxLgrs/hpqchAF6oDFZqdT3xl0p7wOHKkwIR+34jxStQmUiX70/2SchhHICMy7b8VFrY06SxpRVxyd2876A==}
+  /vite-plugin-vue-layouts@0.10.0(vite@5.0.10)(vue-router@4.2.5)(vue@3.3.12):
+    resolution: {integrity: sha512-95hG4rm3EZq1w56b+rlAC+9AxIeytaOFeBS2KDIa2ZJHyDxiWaqf/v93uLCuqkP7ye6W78B/0b7Xo4/y7mocgQ==}
     peerDependencies:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.4

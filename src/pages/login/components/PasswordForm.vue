@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { loginFormModel, steperManager } from '../state'
-import { useUserStore } from '~/store'
+import { loginFormModel, steperManager } from '../share'
+import { useLogin } from '~/pages/login/login'
 
-const userStore = useUserStore()
-const router = useRouter()
+const { login } = useLogin()
 const [loading, setLoading] = useLoading()
 
 async function onNext() {
   setLoading(true)
-  await userStore.login(loginFormModel.value)
+  await login(loginFormModel.value)
   setLoading(false)
-  router.replace('/')
 }
 </script>
 

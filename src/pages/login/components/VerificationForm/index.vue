@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { PageNames, loginFormModel, steperManager } from '../../state'
+import { PageNames, loginFormModel, steperManager } from '../../share'
 import VerificationTimer from './components/Timer.vue'
 import { dataDesensitization } from '~/utils/privacy'
-import { useUserStore } from '~/store'
+import { useLogin } from '~/pages/login/login'
 
-const router = useRouter()
-const userStore = useUserStore()
+const { login } = useLogin()
 const [loading, setLoading] = useLoading()
 const enable = computed(() => {
   return !!(loginFormModel.value.code?.trim() && loginFormModel.value.code.length === 6)
@@ -13,10 +12,8 @@ const enable = computed(() => {
 
 async function onNext() {
   setLoading(true)
-  await userStore.login(loginFormModel.value)
+  await login(loginFormModel.value)
   setLoading(false)
-
-  router.replace('/')
 }
 </script>
 

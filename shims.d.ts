@@ -1,3 +1,6 @@
+import type { defineComponent } from 'vue'
+import type { NavigationGuard, RouteMeta } from 'vue-router'
+
 declare module '*.vue' {
   import type { DefineComponent } from 'vue'
 

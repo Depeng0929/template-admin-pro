@@ -1,5 +1,4 @@
 import { ArcoResolver } from 'unplugin-vue-components/resolvers'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
@@ -10,15 +9,17 @@ export default [
   AutoImport({
     imports: [
       'vue',
-      VueRouterAutoImports,
-      {
-        // add any other imports you were relying on
-        'vue-router/auto': ['useLink'],
-      },
+      'vue-router',
       {
         '@depeng9527/tools': [
           'debug',
           'equal',
+        ],
+      },
+      {
+        '@vueuse/router': [
+          'useRouteParams',
+          'useRouteQuery',
         ],
       },
     ],

@@ -1,8 +1,5 @@
-import VueRouter from 'unplugin-vue-router/vite'
+import Layouts from 'vite-plugin-vue-layouts'
 
 export default [
-  // file base
-  VueRouter({
-    exclude: ['pages/**/components/*.vue', 'pages/**/*.ts'],
-  }),
+  Layouts(),
 ]

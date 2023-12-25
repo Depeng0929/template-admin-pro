@@ -39,8 +39,9 @@ import type {
 
 declare module 'vue-router/auto/routes' {
   export interface RouteNamedMap {
-    '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '/[...all]': RouteRecordInfo<'/[...all]', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
+  export interface RouteNamedMap {
+    '//': RouteRecordInfo<'//', '/', Record<never, never>, Record<never, never>>,
+  }  '/[...all]': RouteRecordInfo<'/[...all]', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
     '/login/': RouteRecordInfo<'/login/', '/login', Record<never, never>, Record<never, never>>,
     '/login/components/AuthTips': RouteRecordInfo<'/login/components/AuthTips', '/login/components/AuthTips', Record<never, never>, Record<never, never>>,
     '/login/components/LoginForm': RouteRecordInfo<'/login/components/LoginForm', '/login/components/LoginForm', Record<never, never>, Record<never, never>>,
@@ -48,6 +49,7 @@ declare module 'vue-router/auto/routes' {
     '/login/components/PasswordForm': RouteRecordInfo<'/login/components/PasswordForm', '/login/components/PasswordForm', Record<never, never>, Record<never, never>>,
     '/login/components/Verification/components/Timer': RouteRecordInfo<'/login/components/Verification/components/Timer', '/login/components/Verification/components/Timer', Record<never, never>, Record<never, never>>,
     '/login/components/Verification/Form': RouteRecordInfo<'/login/components/Verification/Form', '/login/components/Verification/Form', Record<never, never>, Record<never, never>>,
+    '/redirect/[path]': RouteRecordInfo<'/redirect/[path]', '/redirect/:path', { path: ParamValue<true> }, { path: ParamValue<false> }>,
     '/register/': RouteRecordInfo<'/register/', '/register', Record<never, never>, Record<never, never>>,
   }
 }

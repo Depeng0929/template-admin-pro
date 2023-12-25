@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FieldRule } from '@arco-design/web-vue'
 import { sleep } from '@depeng9527/tools'
-import { loginFormModel, steperManager } from '../state'
+import { loginFormModel, steperManager } from '../share'
 import config from '../../../../config'
 import AuthTips from './AuthTips.vue'
 import { isEmail, isMobile } from '~/utils/validate'
