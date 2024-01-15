@@ -25,6 +25,7 @@ function loadComponent(rawRoute: AppRouteRecordRaw): AppRouteRecordRaw {
 
 // string转组件
 function convertComponent(menu: AppRouteRecordRaw): RouteComponent | (() => Promise<RouteComponent>) {
+  // TODO: 使用vite虚拟模块,select options
   if (!menu.component || menu.component === 'Layout')
     return Layout as RouteComponent
   else

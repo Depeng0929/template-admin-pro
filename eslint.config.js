@@ -11,4 +11,10 @@ export default antfu(
       'prefer-regex-literals': 'off',
     },
   },
+  {
+    files: ['**/*.vue'],
+    rules: {
+      'antfu/top-level-function': 'off',
+    },
+  },
 )

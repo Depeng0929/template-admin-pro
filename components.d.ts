@@ -21,6 +21,7 @@ declare module 'vue' {
     ATabs: typeof import('@arco-design/web-vue')['Tabs']
     AVerificationCode: typeof import('@arco-design/web-vue')['VerificationCode']
     Modal: typeof import('./src/components/Modal/index.vue')['default']
+    Navbar: typeof import('./src/components/Navbar/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCounter: typeof import('./src/components/TheCounter.vue')['default']

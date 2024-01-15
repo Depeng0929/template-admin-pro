@@ -1,10 +1,11 @@
 $dark: #121212;
 $theme: #0052D9;
-$theme-fade: #f2f3ff;
+$theme-fade: rgba(51,112,255,.08);
 
 :root {
   --theme: #0052D9;
-  --theme-fade: #f2f3ff;
+  --theme-fade: rgba(51,112,255,.08);
+  --bg-base: #F2F3F5;
 }
 
 :export {
